@@ -1,7 +1,8 @@
 ---
-- name: Install Docker on Ubuntu
+- name: recreating the desktop applications  on Ubuntu 22.04
   hosts: all
   become: true
   roles:
-    - docker_install
-    - dockge_deploy
+    - nala_install
+    - warp_deploy
+

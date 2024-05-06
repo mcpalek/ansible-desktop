@@ -1,0 +1,54 @@
+  qm create 209 --name windows-ltsc \
+                --bootdisk scsi0 \
+                --ostype win10 \
+                --sockets 1 --cores 8 \
+                --memory 24576 \
+                --net0 virtio,bridge=vmbr0,firewall=0 \
+                --scsihw virtio-scsi-pci \
+                --scsi0 local-lvm:100 \
+                --ide2 local:iso/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso \
+                --ide3 local:iso/virtio-win-0.1.240.iso \
+                --boot order=ide2
+                
+                ovo gore KREIRA vm ALI NE MOZE  DA SE BOOT-UJE JER NEMA VIRTIO za windows
+                
+                 qm create 201 --name Ubuntu-2204template \
+                --bootdisk scsi0 \
+                --ostype l26 \
+                --cputype EPYC-v3 \
+                --sockets 1 --cores 8 \
+                --memory 8576 \
+                --net0 virtio,bridge=vmbr0,firewall=0 \
+                --scsihw virtio-scsi-pci \
+                --scsi0 local-lvm:32 \
+                --ide2 local:iso/ubuntu-22.04.2-live-server-amd64.iso \
+                --boot order=ide2
+                
+                ovo gore mi ne dozvoljava da ga kloniram kasnije zbog toga shto koristi IDE drajv
+                
+                qm create 210 --name Ubuntu22.04zaTemplate \
+                 --memory 6144 \
+                 --sockets 1 --cores 8 \
+                 --ostype l26 \
+                 --onboot yes \
+                 --net0 virtio,bridge=vmbr0 \
+                 --cdrom local:iso/ubuntu-22.04.2-live-server-amd64.iso \
+                 --virtio0 local-lvm:42 \
+                 --bootdisk virtio0
+                
+                "qm create 200 --name {{template_name}} --sockets {{vm_sockets}} --cores {{vm_cores}} --memory {{vm_memory_mb}} --cdrom file={{os_iso_location}},media=cdrom --net0 model=virtio,bridge=vmbr0 --scsihw virtio-scsi-pci --scsi0 {{pve_storage_id}}:{{drive_size_gb}},format={{format}} --ostype {{vm_os_type}} --agent {{agent}}"
+                
+                qm create 200 --name windows-ltsc \
+                --bootdisk virtio0 \
+                --ostype win10 \
+                --sockets 1 --cores 8 \
+                --memory 24576 \
+                --net0 virtio,bridge=vmbr0,firewall=0 \
+                --scsihw virtio-scsi-pci --virtio0: local-lvm:vm-100-disk-1,size=32G \
+                --ide2 local:iso/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso \
+                --ide3 local:iso/virtio-win-0.1.240.iso \
+                --boot order=virtio0
+                
+                
+                  
+                
