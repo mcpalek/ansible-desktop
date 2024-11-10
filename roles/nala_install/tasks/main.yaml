@@ -41,7 +41,7 @@
 
 - name: Copy content of directory 'files'
   copy:
-    src: files/ # note the '/' <-- !!!
+    src: files/desktop # note the '/' <-- !!!
     dest: /tmp/files/
 
 
