@@ -4,7 +4,7 @@ This is a playbook which I use when I want to install the tools I usually use in
 
 It will install Ansible , Visual Studio Code , Brave Brawser , Warp terminal etc
 
-Prerequisit is to creat and copy ssh key to this VM followinf the command below:
+Prerequisit is to creat and copy ssh key to this VM following the command below:
 
 ssh-keygen -t ed25519 -C "ansible" # here I write /home/aca/.ssh/ansible for the folder in which I am saving the ssh key
 
