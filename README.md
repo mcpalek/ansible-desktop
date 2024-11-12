@@ -1,6 +1,6 @@
 # ansible-desktop
 
-This is a playbook which I use when I want to install the tools I usally usein my everytday work on a desktop Linux.
+This is a playbook which I use when I want to install the tools I usually use in my everyday work on a desktop Linux.
 
 It will install Ansible , Visual Studio Code , Brave Brawser , Warp terminal etc
 
