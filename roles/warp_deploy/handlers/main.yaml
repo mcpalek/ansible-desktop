@@ -1,5 +1,1 @@
-- name: Start Dockge
-  community.docker.docker_compose:
-    project_src: /root/docker-compose/dockge
-    state: present
-    restarted: true
+

@@ -1,7 +1,7 @@
 docker:
   hosts:
     docker01:
-      ansible_host: 192.168.1.28
+      ansible_host: 192.168.1.55
       ansible_user: 'aca'
       ansible_become: true
       ansible_become_method: sudo
