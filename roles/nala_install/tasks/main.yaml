@@ -43,7 +43,41 @@
   copy:
     src: files/desktop # note the '/' <-- !!!
     dest: /tmp/files/
+# Install dependencies (curl, gnupg)
+ - name: Install required dependencies
+   apt:
+     name:
+       - curl
+       - gnupg
+     state: present
 
+ # Add HashiCorp GPG key
+ - name: Add HashiCorp GPG key
+   apt_key:
+     url: https://apt.releases.hashicorp.com/gpg
+     state: present
 
+ # Add HashiCorp repository
+ - name: Add HashiCorp repository
+   apt_repository:
+     repo: "deb https://apt.releases.hashicorp.com ubuntu main"
+     state: present
+     filename: hashicorp
+
+ # Install Terraform
+ - name: Install Terraform
+   apt:
+     name: terraform
+     state: present
+
+ # Ensure Terraform is installed correctly
+ - name: Verify Terraform version
+   command: terraform --version
+   register: terraform_version
+   changed_when: false
+
+ - name: Show Terraform version
+   debug:
+     msg: "Terraform version installed: {{ terraform_version.stdout }}"
 
 
